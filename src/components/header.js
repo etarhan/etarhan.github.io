@@ -4,27 +4,16 @@ import React from "react"
 
 const Header = ({ siteTitle }) => (
   <header class="main-header">
-    <nav class="navbar">
+    {/*<nav class="navbar">
       <span>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </span>
-      <span>
-        <a href="#">About</a>
-        <a href="#">About</a>
-        <a href="#">About</a>
+        <a href="/">Work</a>
+        <a href="/">About</a>
+        <a href="/">About</a>
       </span>
     </nav>
     <h1 style={{ margin: 0 }}>
-    </h1>
-  </header>
+    </h1>*/}
+</header>
 )
 
 Header.propTypes = {

@@ -2,15 +2,26 @@
 @import "reset";
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Palanquin');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+h1 {
+  font-size: 3em;
+}
 
 .main-container {
   font-family: Roboto;
 }
 
 .pin {
-  border-radius: 50%;
+  margin: 1em;
   padding: 1em;
   background-color: white;
+  overflow: hidden;
 }
 
 .main-header {
@@ -34,8 +45,10 @@
 }
 
 .header-parallax { 
+  background-color: #7289da;
+
   /* The image used */
-  background-image: url("https://cdn-images-1.medium.com/max/2000/1*lLNHg_D0ehCHzRLXgpglMA.png");
+  // background-image: url("https://cdn-images-1.medium.com/max/2000/1*lLNHg_D0ehCHzRLXgpglMA.png");
 
   /* Set a specific height */
   height: 100vh; 
@@ -49,4 +62,35 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  h1 {
+    font-family: 'Arvo';
+    font-weight: bolder;
+    color: 		#23272a;
+    // letter-spacing: 0.5em;
+    font-size: 5em;
+  }
+
+  h2 {
+    font-family: 'Lato';
+    color: 	#2c2f33;
+    // letter-spacing: 0.5em;
+    font-size: 3em;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .pin-container {
+    display: flex;
+  }
+
+  .center-content {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
