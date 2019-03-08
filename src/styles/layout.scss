@@ -1,0 +1,52 @@
+
+@import "reset";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.main-container {
+  font-family: Roboto;
+}
+
+.pin {
+  border-radius: 50%;
+  padding: 1em;
+  background-color: white;
+}
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  span {
+    padding: 20px;
+  }
+  a {
+    padding: 5px;
+    display: inline-block;
+  }
+
+}
+
+.header-parallax { 
+  /* The image used */
+  background-image: url("https://cdn-images-1.medium.com/max/2000/1*lLNHg_D0ehCHzRLXgpglMA.png");
+
+  /* Set a specific height */
+  height: 100vh; 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
