@@ -1,96 +1,93 @@
 
-@import "reset";
+@import "~bootstrap/scss/bootstrap";
 
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Lato');
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-@import url('https://fonts.googleapis.com/css?family=Palanquin');
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
-@import url('https://fonts.googleapis.com/css?family=Arvo');
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 
-h1 {
-  font-size: 3em;
+@import url('https://fonts.googleapis.com/css?family=Lato:300,600|Raleway:400,600');
+
+
+html, body, 
+#___gatsby, 
+#___gatsby > div[role="group"][tabindex], 
+.main-container, 
+main {
+  height: 100%;
 }
 
-.main-container {
-  font-family: Roboto;
+h5 {
+  font-family: Lato;
+  color: #F7F7FF;
+}
+.text-container {
+  h1 {
+    span {
+      font-family: Lato;
+      font-weight: 600;
+    }
+    font-family: 'Raleway';
+    text-transform: lowercase;
+    font-weight: 600;
+    color: #A71D31;
+    font-size: 5em;
+
+    @media (max-width: 576px) {
+      font-size: 3em;
+    }
+  }
+  
+  h2 {
+    font-family: 'Lato';
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: 	#F7F7FF;
+    font-size: 1.3em;
+    @media (max-width: 576px) {
+      font-size: 0.78em;
+    }
+  }
 }
 
 .pin {
-  margin: 1em;
+  color:#272d3c;
+  display: inline-block;
+  height: auto;
+  margin-right: 1em;
   padding: 1em;
-  background-color: white;
+  background-color: #F7F7FF;
   overflow: hidden;
-}
-
-.main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  span {
-    padding: 20px;
+  &:hover {
+    color: #A71D31
   }
-  a {
-    padding: 5px;
-    display: inline-block;
+
+  @media (max-width: 576px) {
+    margin-right: 0.6em;
+    padding: 0.6em;
+    svg {
+      height: 3em;
+      width: 3em;
+    }
   }
 
 }
 
 .header-parallax { 
-  background-color: #7289da;
-
-  /* The image used */
-  // background-image: url("https://cdn-images-1.medium.com/max/2000/1*lLNHg_D0ehCHzRLXgpglMA.png");
-
-  /* Set a specific height */
-  height: 100vh; 
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  background-color: #181C26;
+  height: 100%; 
+  
   /* Create the parallax scrolling effect */
+  background-image: url('../images/transistor.svg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
 
-  h1 {
-    font-family: 'Arvo';
-    font-weight: bolder;
-    color: 		#23272a;
-    // letter-spacing: 0.5em;
-    font-size: 5em;
+.text-container {
+  h1, h2 {
+    overflow: hidden;
   }
+}
 
-  h2 {
-    font-family: 'Lato';
-    color: 	#2c2f33;
-    // letter-spacing: 0.5em;
-    font-size: 3em;
-  }
-
-  .text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .pin-container {
-    display: flex;
-  }
-
-  .center-content {
-    display: flex;
-    width: 60%;
-    justify-content: space-between;
-    align-items: center;
-  }
+.chevron-down {
+  color: #F7F7FF;
 }
