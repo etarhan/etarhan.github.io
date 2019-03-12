@@ -137,7 +137,7 @@ const IndexPage = () => {
                 >
                   <SkillDescription>
                     <span>
-                      <FaReact size="2em" />
+                      <FaNodeJs size="2em" />
                     </span>
                     <span>Node.js</span>
                   </SkillDescription>
