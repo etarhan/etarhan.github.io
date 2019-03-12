@@ -9,6 +9,7 @@ import {
   FaHtml5,
   FaReact,
   FaCss3Alt,
+  FaSass,
   FaCode,
 } from "react-icons/fa"
 /** @jsx jsx */
@@ -161,7 +162,7 @@ const IndexPage = () => {
                   css={css`
                     margin: 1em;
                   `}
-                  percent={90}
+                  percent={97}
                   size="9em"
                   color="#f16529"
                 >
@@ -185,6 +186,21 @@ const IndexPage = () => {
                       <FaCss3Alt size="2em" />
                     </span>
                     <span>CSS3</span>
+                  </SkillDescription>
+                </RadialProgress>
+                <RadialProgress
+                  css={css`
+                    margin: 1em;
+                  `}
+                  percent={81}
+                  size="9em"
+                  color="#cd6799"
+                >
+                  <SkillDescription>
+                    <span>
+                      <FaSass size="2em" />
+                    </span>
+                    <span>Sass</span>
                   </SkillDescription>
                 </RadialProgress>
                 <RadialProgress
