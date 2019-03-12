@@ -9,12 +9,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
 import "../styles/layout.scss"
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
+const Layout = ({ children }) => {
+  return (
+    <StaticQuery
+      query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
@@ -23,19 +23,19 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
-      <div class="main-container">
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
-        {/*<footer>
+      render={data => (
+        <div className="main-container">
+          <main>{children}</main>
+          {/*<footer>
           © {new Date().getFullYear()}, Built with
             {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>*/}
-      </div>
-    )}
-  />
-)
+        </div>
+      )}
+    />
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
