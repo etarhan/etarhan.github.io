@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect } from 'react';
 import {
   FaLinkedin,
   FaGithub,
@@ -11,19 +11,18 @@ import {
   FaCss3Alt,
   FaSass,
   FaCode,
-} from "react-icons/fa"
+} from 'react-icons/fa';
 /** @jsx jsx */
-import { css, jsx } from "@emotion/core"
-import styled from "@emotion/styled"
-import { Circle } from "rc-progress"
+import { css, jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Pin from "../components/pin"
-import Header from "../components/header"
-import RadialProgress from "../components/radial-progress"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Pin from '../components/pin';
+import Header from '../components/header';
+import RadialProgress from '../components/radial-progress';
 
-import { animated, useSpring, config } from "react-spring"
+import { animated, useSpring, config } from 'react-spring';
 
 const SkillDescription = styled.div`
   display: flex;
@@ -31,49 +30,76 @@ const SkillDescription = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 1em;
-`
+  @media (max-width: 576px) {
+    font-size: 0.6em;
+  }
+`;
 
 const IndexPage = () => {
   const headerProps = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },
     config: config.molasses,
-  })
+  });
 
-  const [shown, setShown] = useState(false)
+  const [shown, setShown] = useState(false);
 
   const dotProps = useSpring({
     to: { opacity: shown ? 0 : 1 },
     from: { opacity: shown ? 1 : 0 },
     onRest: () => setShown(!shown),
     config: config.slow,
-  })
+  });
 
-  const scrollToDiv = useRef(null)
+  const scrollToDiv = useRef(null);
 
-  const [sectionTop, setSectionTop] = useState(0)
+  const [radialSize, setRadialSize] = useState('9em');
+  const [ratio, setRatio] = useState(1.5);
+  const [iconSize, setIconSize] = useState('2em');
+  const [sectionTop, setSectionTop] = useState(0);
+
   useEffect(() => {
-    const section = document.getElementsByClassName("skill-section")[0]
-    const nav = document.getElementsByClassName("main-header")[0]
+    const resizeEvent = () => {
+      if (!window.matchMedia('(max-width: 576px)').matches) {
+        setRadialSize('9em');
+        setRatio(1.5);
+        setIconSize('2em');
+      } else {
+        setRadialSize('4.5em');
+        setRatio(1.2);
+        setIconSize('1.5em');
+      }
+    };
 
-    if (section.offsetTop > 0) setSectionTop(section.offsetTop)
+    window.addEventListener('resize', resizeEvent);
+
+    return () => {
+      window.removeEventListener('resize', resizeEvent);
+    };
+  });
+
+  useEffect(() => {
+    const section = document.getElementsByClassName('skill-section')[0];
+    const nav = document.getElementsByClassName('main-header')[0];
+
+    if (section.offsetTop > 0) setSectionTop(section.offsetTop);
 
     const stickyEvent = () => {
       if (window.scrollY >= sectionTop) {
-        nav.classList.add("fixed-nav")
+        nav.classList.add('fixed-nav');
       } else {
-        if (nav.classList.contains("fixed-nav")) {
-          nav.classList.add("hidden-nav")
-          nav.classList.remove("fixed-nav")
+        if (nav.classList.contains('fixed-nav')) {
+          nav.classList.add('hidden-nav');
+          nav.classList.remove('fixed-nav');
         }
       }
-    }
-    window.addEventListener("scroll", stickyEvent)
+    };
+    window.addEventListener('scroll', stickyEvent);
 
     return () => {
-      window.removeEventListener("scroll", stickyEvent)
-    }
-  })
+      window.removeEventListener('scroll', stickyEvent);
+    };
+  });
 
   return (
     <Layout>
@@ -133,12 +159,13 @@ const IndexPage = () => {
                     margin: 1em;
                   `}
                   percent={80}
-                  size="9em"
+                  size={radialSize}
+                  ratioInner={ratio}
                   color="#026e00"
                 >
                   <SkillDescription>
                     <span>
-                      <FaNodeJs size="2em" />
+                      <FaNodeJs size={iconSize} />
                     </span>
                     <span>Node.js</span>
                   </SkillDescription>
@@ -148,12 +175,13 @@ const IndexPage = () => {
                     margin: 1em;
                   `}
                   percent={85}
-                  size="9em"
+                  size={radialSize}
+                  ratioInner={ratio}
                   color="#61dafb"
                 >
                   <SkillDescription>
                     <span>
-                      <FaReact size="2em" />
+                      <FaReact size={iconSize} />
                     </span>
                     <span>React</span>
                   </SkillDescription>
@@ -163,12 +191,13 @@ const IndexPage = () => {
                     margin: 1em;
                   `}
                   percent={97}
-                  size="9em"
+                  size={radialSize}
+                  ratioInner={ratio}
                   color="#f16529"
                 >
                   <SkillDescription>
                     <span>
-                      <FaHtml5 size="2em" />
+                      <FaHtml5 size={iconSize} />
                     </span>
                     <span>HTML5</span>
                   </SkillDescription>
@@ -178,12 +207,13 @@ const IndexPage = () => {
                     margin: 1em;
                   `}
                   percent={87}
-                  size="9em"
+                  size={radialSize}
+                  ratioInner={ratio}
                   color="#264de4"
                 >
                   <SkillDescription>
                     <span>
-                      <FaCss3Alt size="2em" />
+                      <FaCss3Alt size={iconSize} />
                     </span>
                     <span>CSS3</span>
                   </SkillDescription>
@@ -193,12 +223,13 @@ const IndexPage = () => {
                     margin: 1em;
                   `}
                   percent={81}
-                  size="9em"
+                  size={radialSize}
+                  ratioInner={ratio}
                   color="#cd6799"
                 >
                   <SkillDescription>
                     <span>
-                      <FaSass size="2em" />
+                      <FaSass size={iconSize} />
                     </span>
                     <span>Sass</span>
                   </SkillDescription>
@@ -208,12 +239,13 @@ const IndexPage = () => {
                     margin: 1em;
                   `}
                   percent={93}
-                  size="9em"
+                  size={radialSize}
+                  ratioInner={ratio}
                   color="#f0db4f"
                 >
                   <SkillDescription>
                     <span>
-                      <FaJs size="2em" />
+                      <FaJs size={iconSize} />
                     </span>
                     <span>JavaScript</span>
                   </SkillDescription>
@@ -224,7 +256,7 @@ const IndexPage = () => {
         </section>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

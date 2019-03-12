@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect } from 'react';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
 
@@ -11,6 +11,15 @@ const circleCalc = (inputSize, unit) => css`
   width: ${inputSize + unit};
   height: ${inputSize + unit};
 `;
+
+const innerCircleCalc = (inputSize, unit) => css`
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  width: ${inputSize + unit};
+  height: ${inputSize + unit};
+`;
+
 
 export default ({
   percent,
@@ -40,7 +49,7 @@ export default ({
       >
         <div
           css={css`
-              ${circleCalc(sizeNumber, sizeUnit)}
+              ${innerCircleCalc(sizeNumber, sizeUnit)}
               clip: ${
                 percent > 50
                   ? `rect(0, ${sizeNumber / 2 + sizeUnit}, ${size}, 0)`
