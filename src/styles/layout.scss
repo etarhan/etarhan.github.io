@@ -62,10 +62,13 @@ h1, h2, h3, h4, h5 {
       z-index: 3;
       font-family: Lato;
       font-size: 1.5em;
+      @media (max-width: 576px) {
+        font-size: 1em;
+      }
       width: 40%;
       @media (max-width: 1200px) {
         width: 100%;
-        padding: 2em 2em 2em 2em;
+        padding: 2em 2em 0em 2em;
       }
       .center-graphic {
         color: $primary-color;

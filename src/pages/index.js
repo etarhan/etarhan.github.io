@@ -38,9 +38,8 @@ const SkillDescription = styled.div`
 const resize = () => {
   if (!window.matchMedia('(max-width: 576px)').matches) {
     return { radialSize: '9em', ratio: 1.5, iconSize: '2em' };
-  } else {
-    return { radialSize: '4.5em', ratio: 1.2, iconSize: '1.5em' };
   }
+  return { radialSize: '4.5em', ratio: 1.2, iconSize: '1.5em' };
 };
 
 const IndexPage = () => {
@@ -61,21 +60,24 @@ const IndexPage = () => {
 
   const scrollToDiv = useRef(null);
 
-  const initialSizeObj = resize();
-  const [radialSize, setRadialSize] = useState(initialSizeObj.radialSize);
-  const [ratio, setRatio] = useState(initialSizeObj.ratio);
-  const [iconSize, setIconSize] = useState(initialSizeObj.iconSize);
-
+  const [radialSize, setRadialSize] = useState('0em');
+  const [ratio, setRatio] = useState(0);
+  const [iconSize, setIconSize] = useState('0em');
   const [sectionTop, setSectionTop] = useState(0);
 
   useEffect(() => {
     const resizeEvent = () => {
-      const resizeObj = resize();
-      setRadialSize(resizeObj.radialSize);
-      setRatio(resizeObj.ratio);
-      setIconSize(resizeObj.iconSize);
+      if (!window.matchMedia('(max-width: 576px)').matches) {
+        setRadialSize('9em');
+        setRatio(1.5);
+        setIconSize('2em');
+      } else {
+        setRadialSize('4.5em');
+        setRatio(1.2);
+        setIconSize('1.5em');
+      }
     };
-
+    resizeEvent();
     window.addEventListener('resize', resizeEvent);
 
     return () => {
