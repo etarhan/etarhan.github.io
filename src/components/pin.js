@@ -15,22 +15,18 @@ const Pin = ({ url, children }) => {
     ref: secondRef,
     to: { borderRadius: '50%' },
     from: { borderRadius: '0%' },
-    // delay: 100,
     config: config.gentle
   });
 
   useChain([firstRef, secondRef], [0.5, 1]);
 
-  // const [bounce, setBounce] = useState(false)
   const [grow, setGrow] = useState(false)
-
   const growProps = useSpring({ 
     transform: `scale(${grow ? 1.1 : 1}`, 
     config: config.gentle
   });
 
   return (
-
     <animated.a 
       href={url}
       style={{

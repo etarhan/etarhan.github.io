@@ -13,7 +13,7 @@ const Header = () => (
   <header className="main-header">
     <div className="left">
       <h5 className="brand">
-        Eray<span>·</span>Tarhan
+        Eray Tarhan
       </h5>
       <h5 className="title">Full-stack</h5>
       <h5 className="title">Web Developer</h5>

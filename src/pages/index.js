@@ -15,6 +15,7 @@ import {
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
 import styled from '@emotion/styled';
+import { Link } from 'react-scroll';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -34,13 +35,6 @@ const SkillDescription = styled.div`
     font-size: 0.6em;
   }
 `;
-
-const resize = () => {
-  if (!window.matchMedia('(max-width: 576px)').matches) {
-    return { radialSize: '9em', ratio: 1.5, iconSize: '2em' };
-  }
-  return { radialSize: '4.5em', ratio: 1.2, iconSize: '1.5em' };
-};
 
 const IndexPage = () => {
   const headerProps = useSpring({
@@ -114,9 +108,7 @@ const IndexPage = () => {
       <div className="container-fluid header-parallax">
         <section className="row h-75 justify-content-center align-items-end">
           <div className="col-sm-12 text-center text-container">
-            <animated.h1 style={headerProps}>
-              Eray<animated.span style={dotProps}>·</animated.span>Tarhan
-            </animated.h1>
+            <animated.h1 style={headerProps}>Eray Tarhan</animated.h1>
             <animated.h2 style={headerProps}>
               Full-stack Web Developer
             </animated.h2>
@@ -135,11 +127,17 @@ const IndexPage = () => {
         </section>
         <div className="row h-25 align-items-end">
           <div className="col-sm-12 text-center">
-            <h5>See more</h5>
-            <FaAngleDown className="chevron-down" size="3em" />
+            <Link to="skills" smooth={true} duration={500}>
+              <h5 className="seemore">see more</h5>
+            </Link>
+            <br />
+            <FaAngleDown
+              className="animated bounce slower infinite chevron-down"
+              size="3em"
+            />
           </div>
         </div>
-        <section className="row h-100">
+        <section name="skills" className="row h-100">
           <div
             ref={scrollToDiv}
             id="skills"
@@ -159,7 +157,6 @@ const IndexPage = () => {
                   nowadays.
                 </p>
               </div>
-              <FaCode size="5em" className="back-graphic" />
               <div className="skills">
                 <RadialProgress
                   css={css`

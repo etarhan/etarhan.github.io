@@ -1,8 +1,9 @@
 
 @import "~bootstrap/scss/bootstrap";
+@import "~animate.css/animate.css";
 
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300,600|Raleway:400,600');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,600|Raleway:400,900');
 
 @import "variables";
 
@@ -14,14 +15,42 @@ main {
   height: 100%;
 }
 
+.seemore {
+  padding: 1em;
+  margin-bottom: 2em;
+  border: 2px solid $highlight-color;
+  border-radius: 5%;
+  font-family: Lato;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  &:hover {
+    background-color: $highlight-color;
+    font-weight: 600;
+    font-size: 1em;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 2px solid $highlight-color;
+    border-radius: 5%;
+    font-family: Lato;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
 h1, h2, h3, h4, h5 {
   color: $primary-color;
 }
 
 .skill-section {
   background-color: $back-color;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 5em;
+  padding-bottom: 5em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,16 +60,16 @@ h1, h2, h3, h4, h5 {
     font-family: Raleway;
     text-transform: uppercase;
     @media (max-width: 576px) {
-      font-size: 1em;
+      font-size: 1.5em;
     }
   }
 
   @media (max-width: 576px) {
-    padding-top: 8em;
+    padding-top: 6em;
   }
 
   .skills-container {
-    margin-top: 2%;
+    margin-top: 1.5em;
     padding-top: 2%;
     background-color: $content-color;
     width: 75%;
@@ -55,7 +84,6 @@ h1, h2, h3, h4, h5 {
     flex-wrap: wrap;
     flex-direction: row;
     z-index: 1;
-    overflow: hidden;
 
     .skills-description {
       padding: 4em 4em 10em 4em;
@@ -63,7 +91,7 @@ h1, h2, h3, h4, h5 {
       font-family: Lato;
       font-size: 1.5em;
       @media (max-width: 576px) {
-        font-size: 1em;
+        font-size: 1.2em;
       }
       width: 40%;
       @media (max-width: 1200px) {
@@ -75,21 +103,6 @@ h1, h2, h3, h4, h5 {
         font-size: 10em;
       }
     }
-
-    .back-graphic {
-      color: $primary-color;
-      right: 5em;
-      font-size: 10em;
-      opacity: 0.03;
-      position: absolute;
-      z-index: 2;
-      @media (max-width: 1200px) {
-        width: 100%;
-        font-size: 2em;
-        position: static;
-      }
-    }
-
 
     .skills {
       display: flex;
@@ -227,10 +240,11 @@ h5.brand {
     font-weight: 600;
   }
   font-family: 'Raleway';
-  text-transform: lowercase;
-  font-weight: 600;
+  text-transform: uppercase;
+  font-weight: 900;
   color: $highlight-color;
   font-size: 1em;
+  letter-spacing: -0.05em;
 
   @media (max-width: 576px) {
   }
@@ -244,6 +258,9 @@ h5.title {
   color: 	$content-color;
   font-size: 0.65em;
   padding-right: 0.5em;
+  position: relative;
+  bottom: 0.3em;
+
   @media (max-width: 576px) {
     font-size: 0.5em;
   }
@@ -251,13 +268,10 @@ h5.title {
 
 .text-container {
   h1 {
-    span {
-      font-family: Lato;
-      font-weight: 600;
-    }
     font-family: 'Raleway';
-    text-transform: lowercase;
-    font-weight: 600;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -0.1em;
     color: $highlight-color;
     font-size: 5em;
 
@@ -272,7 +286,7 @@ h5.title {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     color: 	$content-color;
-    font-size: 1.3em;
+    font-size: 1.5em;
     @media (max-width: 576px) {
       font-size: 0.78em;
     }
@@ -284,6 +298,9 @@ h5.title {
   display: inline-block;
   height: auto;
   margin-right: 1em;
+  &:last-child {
+    margin-right: 0;
+  }
   padding: 1em;
   background-color: $content-color;
   overflow: hidden;
@@ -293,6 +310,9 @@ h5.title {
 
   @media (max-width: 576px) {
     margin-right: 0.6em;
+    &:last-child {
+      margin-right: 0;
+    }
     padding: 0.6em;
     svg {
       height: 3em;
@@ -307,7 +327,7 @@ h5.title {
   height: 100%; 
   
   /* Create the parallax scrolling effect */
-  background-image: url('../images/transistor.svg');
+  background-image: url('../images/main-bg.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
