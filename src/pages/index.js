@@ -23,7 +23,7 @@ import Pin from '../components/pin';
 import Header from '../components/header';
 import RadialProgress from '../components/radial-progress';
 
-import { animated, useSpring, config } from 'react-spring';
+import { animated, useSpring, config } from 'react-spring/web.cjs';
 
 const SkillDescription = styled.div`
   display: flex;

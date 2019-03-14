@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { animated, useSpring, useChain, config } from 'react-spring';
+import { animated, useSpring, useChain, config } from 'react-spring/web.cjs';
 
 const Pin = ({ url, children }) => {
   const firstRef = useRef();
