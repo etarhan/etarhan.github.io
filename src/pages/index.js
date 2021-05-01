@@ -79,29 +79,6 @@ const IndexPage = () => {
     };
   });
 
-  useEffect(() => {
-    const section = document.getElementsByClassName('skill-section')[0];
-    const nav = document.getElementsByClassName('main-header')[0];
-
-    if (section.offsetTop > 0) setSectionTop(section.offsetTop);
-
-    const stickyEvent = () => {
-      if (window.scrollY >= sectionTop) {
-        nav.classList.add('fixed-nav');
-      } else {
-        if (nav.classList.contains('fixed-nav')) {
-          nav.classList.add('hidden-nav');
-          nav.classList.remove('fixed-nav');
-        }
-      }
-    };
-    window.addEventListener('scroll', stickyEvent);
-
-    return () => {
-      window.removeEventListener('scroll', stickyEvent);
-    };
-  });
-
   return (
     <Layout>
       <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
@@ -110,7 +87,7 @@ const IndexPage = () => {
           <div className="col-sm-12 text-center text-container">
             <animated.h1 style={headerProps}>Eray Tarhan</animated.h1>
             <animated.h2 style={headerProps}>
-              Full-stack Web Developer
+              Software Engineer
             </animated.h2>
           </div>
           <div className="col-sm-12 text-center">
@@ -123,139 +100,6 @@ const IndexPage = () => {
             <Pin url="https://stackoverflow.com/users/10353987/etarhan">
               <FaStackOverflow size="5em" />
             </Pin>
-          </div>
-        </section>
-        <div className="row h-25 align-items-end">
-          <div className="col-sm-12 text-center">
-            <Link to="skills" smooth={true} duration={500}>
-              <h5 className="seemore">see more</h5>
-            </Link>
-            <br />
-            <FaAngleDown
-              className="animated bounce slower infinite chevron-down"
-              size="3em"
-            />
-          </div>
-        </div>
-        <section name="skills" className="row h-100">
-          <div
-            ref={scrollToDiv}
-            id="skills"
-            className="col-sm-12 skill-section"
-          >
-            <Header />
-            <div className="headtext text-center">
-              <h1>Skills</h1>
-              <div className="understroke" />
-            </div>
-            <div className="skills-container">
-              <div className="skills-description">
-                <div className="text-center" />
-                <p>
-                  I'm an experienced developer well versed in a wide range of
-                  technologies. Here is a subselection of what I like using
-                  nowadays.
-                </p>
-              </div>
-              <div className="skills">
-                <RadialProgress
-                  css={css`
-                    margin: 1em;
-                  `}
-                  percent={80}
-                  size={radialSize}
-                  ratioInner={ratio}
-                  color="#026e00"
-                >
-                  <SkillDescription>
-                    <span>
-                      <FaNodeJs size={iconSize} />
-                    </span>
-                    <span>Node.js</span>
-                  </SkillDescription>
-                </RadialProgress>
-                <RadialProgress
-                  css={css`
-                    margin: 1em;
-                  `}
-                  percent={85}
-                  size={radialSize}
-                  ratioInner={ratio}
-                  color="#61dafb"
-                >
-                  <SkillDescription>
-                    <span>
-                      <FaReact size={iconSize} />
-                    </span>
-                    <span>React</span>
-                  </SkillDescription>
-                </RadialProgress>
-                <RadialProgress
-                  css={css`
-                    margin: 1em;
-                  `}
-                  percent={97}
-                  size={radialSize}
-                  ratioInner={ratio}
-                  color="#f16529"
-                >
-                  <SkillDescription>
-                    <span>
-                      <FaHtml5 size={iconSize} />
-                    </span>
-                    <span>HTML5</span>
-                  </SkillDescription>
-                </RadialProgress>
-                <RadialProgress
-                  css={css`
-                    margin: 1em;
-                  `}
-                  percent={87}
-                  size={radialSize}
-                  ratioInner={ratio}
-                  color="#264de4"
-                >
-                  <SkillDescription>
-                    <span>
-                      <FaCss3Alt size={iconSize} />
-                    </span>
-                    <span>CSS3</span>
-                  </SkillDescription>
-                </RadialProgress>
-                <RadialProgress
-                  css={css`
-                    margin: 1em;
-                  `}
-                  percent={81}
-                  size={radialSize}
-                  ratioInner={ratio}
-                  color="#cd6799"
-                >
-                  <SkillDescription>
-                    <span>
-                      <FaSass size={iconSize} />
-                    </span>
-                    <span>Sass</span>
-                  </SkillDescription>
-                </RadialProgress>
-                <RadialProgress
-                  css={css`
-                    margin: 1em;
-                  `}
-                  percent={93}
-                  size={radialSize}
-                  ratioInner={ratio}
-                  color="#f0db4f"
-                >
-                  <SkillDescription>
-                    <span>
-                      <FaJs size={iconSize} />
-                    </span>
-                    <span>JavaScript</span>
-                  </SkillDescription>
-                </RadialProgress>
-              </div>
-            </div>
           </div>
         </section>
       </div>

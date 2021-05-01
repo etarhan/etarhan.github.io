@@ -15,8 +15,8 @@ const Header = () => (
       <h5 className="brand">
         Eray Tarhan
       </h5>
-      <h5 className="title">Full-stack</h5>
-      <h5 className="title">Web Developer</h5>
+      <h5 className="title">Software</h5>
+      <h5 className="title">Engineer</h5>
     </div>
     <div className="pins">
       <Pin url="https://www.linkedin.com/in/etarhan">
